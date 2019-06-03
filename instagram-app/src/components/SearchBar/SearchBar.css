@@ -48,3 +48,10 @@
     height: 29px;
     width: 103px;
 }
+
+.line {
+    margin: 0 16px;
+    background: black;
+    width: 1px;
+    height: 28px;
+}

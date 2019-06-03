@@ -13,7 +13,7 @@ const SearchBar = () => {
         <div className="search-bar">
             <div className="search-bar-logo">
                 <img src={logo} className="icon" alt="Instagram Logo" />
-                <div class="line">|</div>
+                <div class="line"></div>
                 <div class="overflow">
                     <img src={instagram} className="instagram" alt="Instagram Words" />
                 </div>
