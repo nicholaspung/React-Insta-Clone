@@ -1,7 +1,14 @@
+.nav {
+    width: 1010px;
+    height: 77px;
+    margin: auto;
+}
+
 .search-bar {
     width: 100%;
     padding: 26px 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
