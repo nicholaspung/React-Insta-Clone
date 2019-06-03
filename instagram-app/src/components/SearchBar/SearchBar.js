@@ -1,17 +1,30 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+
+import logo from './logo.png';
+import heart from './heart.png';
+import explore from './explore.png';
+import profile from './profile.png';
+import instagram from './instagram.png';
+
+import './SearchBar.css';
 
 const SearchBar = () => {
     return (
-        <Container>
-            <Row>
-                <Col xs="3">Logo</Col>
-                <Col xs={{ size: 2, offset: 2 }}>SearchBar</Col>
-                <Col xs={{ size: 1, offset: 2 }}>Explore</Col>
-                <Col xs="1">Heart</Col>
-                <Col xs="1">Profile</Col>
-            </Row>
-        </Container>
+        <div className="search-bar">
+            <div className="search-bar-logo">
+                <img src={logo} className="icon" alt="Instagram Logo" />
+                <div class="line">|</div>
+                <div class="overflow">
+                    <img src={instagram} className="instagram" alt="Instagram Words" />
+                </div>
+            </div>
+            <div className="search-bar-search"><input placeholder="Search" className="search-bar-search-bar" /></div>
+            <div className="search-bar-icons">
+                <img src={explore} className="icon" alt="Explore" />
+                <img src={heart} className="icon" alt="Heart" />
+                <img src={profile} className="icon" alt="Profile" />
+            </div>
+        </div>
     );
 }
 
