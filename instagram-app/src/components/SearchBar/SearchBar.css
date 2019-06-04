@@ -1,7 +1,15 @@
-.nav {
-    width: 1010px;
-    height: 77px;
-    margin: auto;
+@media (min-width: 1070px) {
+    .nav {
+        width: 1010px;
+        height: 77px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 705px) {
+    .hidden {
+        display: none;
+    }
 }
 
 .search-bar {

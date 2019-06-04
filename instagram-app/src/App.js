@@ -8,12 +8,32 @@ import dummyData from './dummy-data';
 
 class App extends React.Component {
   state = {
-    postData: []
+    postData: [],
+    search: '',
+    filteredData: []
   }
 
   componentDidMount() {
     this.setState({
-      postData: dummyData
+      postData: dummyData,
+      filteredData: dummyData
+    })
+  }
+
+  handleSearchInput = event => {
+    this.setState({
+      search: event.target.value
+    })
+  }
+
+  handleSearchSubmit = event => {
+    event.preventDefault();
+
+    let filtering = this.state.postData.filter(post => post.username.includes(this.state.search))
+
+    this.setState({
+      filteredData: filtering,
+      search: ''
     })
   }
 
@@ -21,10 +41,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="nav-section">
-          <SearchBar />
+          <SearchBar handleSearchInput={this.handleSearchInput} value={this.state.search} handleSearchSubmit={this.handleSearchSubmit} />
         </div>
         <div className="post-container">
-          {this.state.postData.map(post => <PostContainer post={post} key={post.id} />)}
+          {this.state.filteredData.map(post => <PostContainer post={post} key={post.id} />)}
         </div>
       </div>
     );
