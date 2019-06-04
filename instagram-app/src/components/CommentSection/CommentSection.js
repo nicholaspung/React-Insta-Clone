@@ -20,7 +20,7 @@ class CommentSection extends React.Component {
                     username: 'randomUser',
                     text: this.state.value
                 }],
-                value: 'begone demon'
+                value: ''
             }
         })
     }
@@ -36,7 +36,7 @@ class CommentSection extends React.Component {
             <div>
                 {this.state.comments.map(comment => <Comments comment={comment} key={comment.id} />)}
                 {this.state.timestamp}
-                <AddComment addNewComment={this.addNewComment} handleInputChange={this.handleInputChange}/>
+                <AddComment addNewComment={this.addNewComment} handleInputChange={this.handleInputChange} value={this.state.value} />
             </div>
         );
     }
