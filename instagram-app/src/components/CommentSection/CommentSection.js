@@ -31,7 +31,6 @@ class CommentSection extends React.Component {
     }
 
     render() {
-        console.log(this.state.value)
         return (
             <div>
                 {this.state.comments.map(comment => <Comments comment={comment} key={comment.id} />)}

@@ -5,21 +5,45 @@ import Like from './Like';
 
 import './PostContainer.css';
 
-const PostContainer = props => {
-    return (
-        <div className="instagram-post">
-            <div className="post-header">
-                <img src={props.post.thumbnailUrl} alt={`${props.post.username} logo`} className="post-user" />
-                <span className="text-bold post-username">{props.post.username}</span>
+class PostContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            post: props.post,
+            liked: false,
+            numberOfLikes: props.post.likes
+        }
+    }
+
+    handleClick = () => {
+        this.setState(prevState => {
+            return {
+                liked: !prevState.liked,
+            }
+        })
+        this.setState(prevState => {
+            return {
+                numberOfLikes: (prevState.liked) ? (prevState.numberOfLikes + 1) : (prevState.numberOfLikes - 1)
+            }
+        })
+    }
+
+    render() {
+        return (
+            <div className="instagram-post">
+                <div className="post-header">
+                    <img src={this.state.post.thumbnailUrl} alt={`${this.state.post.username} logo`} className="post-user" />
+                    <span className="text-bold post-username">{this.state.post.username}</span>
+                </div>
+                <img src={this.state.post.imageUrl} alt={`${this.state.post.username} post`} className="post-image" />
+                <div className="post-padding">
+                    <Like liked={this.state.liked} handleClick={this.handleClick} />
+                </div>
+                <span className="text-bold post-padding">{this.state.numberOfLikes} likes</span>
+                <CommentSection comments={this.state.post.comments} />
             </div>
-            <img src={props.post.imageUrl} alt={`${props.post.username} post`} className="post-image" />
-            <div className="post-padding">
-                <Like />
-            </div>
-            <span className="text-bold post-padding">{props.post.likes} likes</span>
-            <CommentSection comments={props.post.comments} />
-        </div>
-    );
+        );
+    }
 }
 
 PostContainer.propTypes = {
