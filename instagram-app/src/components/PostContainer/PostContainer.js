@@ -1,11 +1,9 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+import Like from './Like';
 
 import './PostContainer.css';
-
-import comment from './comment.png';
-import heart from './heart.png';
 
 const PostContainer = props => {
     return (
@@ -16,15 +14,10 @@ const PostContainer = props => {
             </div>
             <img src={props.post.imageUrl} alt={`${props.post.username} post`} className="post-image" />
             <div className="post-padding">
-                <button>
-                    <img src={heart} alt="post like" />
-                </button>
-                <button>
-                    <img src={comment} alt="post comment" />
-                </button>
+                <Like />
             </div>
             <span className="text-bold post-padding">{props.post.likes} likes</span>
-            {props.post.comments.map(comment => <CommentSection comment={comment} key={comment.id} />)}
+            <CommentSection comments={props.post.comments} />
         </div>
     );
 }

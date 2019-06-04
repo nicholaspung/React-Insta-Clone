@@ -1,20 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Comments from './Comments';
+import AddComment from './AddComment';
 
-const CommentSection = props => {
-    return (
-        <div>
-            <span className="text-bold post-padding">{props.comment.username}</span> {props.comment.text}
-        </div>
-    );
+class CommentSection extends React.Component {
+    state = {
+        comments: this.props.comments,
+        value: ''
+    }
+
+    addNewComment = (event, index = this.state.comments.length) => {
+        event.preventDefault();
+
+        this.setState(prevState => {
+            return {
+                comments: [...prevState.comments, {
+                    id: index + 1,
+                    username: 'randomUser',
+                    text: this.state.value
+                }],
+                value: 'begone demon'
+            }
+        })
+    }
+
+    handleInputChange = event => {
+        this.setState({
+            value: event.target.value
+        })
+    }
+
+    render() {
+        console.log(this.state.value)
+        return (
+            <div>
+                {this.state.comments.map(comment => <Comments comment={comment} key={comment.id} />)}
+                <AddComment addNewComment={this.addNewComment} handleInputChange={this.handleInputChange}/>
+            </div>
+        );
+    }
 }
 
 CommentSection.propTypes = {
-    comment: PropTypes.shape({
-        id: PropTypes.number,
-        username: PropTypes.string,
-        text: PropTypes.string
-    })
+    comments: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            username: PropTypes.string,
+            text: PropTypes.string
+        })
+    )
 }
 
 export default CommentSection;
