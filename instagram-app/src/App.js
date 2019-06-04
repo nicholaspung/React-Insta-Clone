@@ -8,14 +8,22 @@ import dummyData from './dummy-data';
 
 class App extends React.Component {
   state = {
-    dummyData
+    postData: []
+  }
+
+  componentDidMount() {
+    this.setState({
+      postData: dummyData
+    })
   }
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.dummyData.map(post => <PostContainer post={post} key={post.id} />)}
+        <div className="post-container">
+          {this.state.postData.map(post => <PostContainer post={post} key={post.id} />)}
+        </div>
       </div>
     );
   }

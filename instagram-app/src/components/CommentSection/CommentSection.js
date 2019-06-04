@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const CommentSection = props => {
     return (
         <div>
-            <span>{props.comment.username}</span> {props.comment.text}
+            <span className="text-bold post-padding">{props.comment.username}</span> {props.comment.text}
         </div>
     );
 }

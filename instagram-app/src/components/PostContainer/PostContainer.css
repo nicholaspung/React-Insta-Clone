@@ -1,0 +1,40 @@
+.instagram-post {
+    width: 600px;
+    margin: 0 auto 60px auto;
+    border: 1px solid #e6e6e6;
+    background: white;
+}
+
+.post-image {
+    width: 600px;
+    height: auto;
+}
+
+.post-user {
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.post-header {
+    padding: 16px;
+}
+
+.post-username {
+    margin-left: 16px;
+}
+
+.post-padding {
+    padding: 0 16px;
+}
+
+button {
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: none;
+}
