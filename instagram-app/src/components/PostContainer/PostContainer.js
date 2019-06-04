@@ -40,7 +40,7 @@ class PostContainer extends React.Component {
                     <Like liked={this.state.liked} handleClick={this.handleClick} />
                 </div>
                 <span className="text-bold post-padding">{this.state.numberOfLikes} likes</span>
-                <CommentSection comments={this.state.post.comments} />
+                <CommentSection comments={this.state.post.comments} timestamp={this.state.post.timestamp} />
             </div>
         );
     }

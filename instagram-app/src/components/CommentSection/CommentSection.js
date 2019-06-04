@@ -5,6 +5,7 @@ import AddComment from './AddComment';
 
 class CommentSection extends React.Component {
     state = {
+        timestamp: this.props.timestamp,
         comments: this.props.comments,
         value: ''
     }
@@ -34,6 +35,7 @@ class CommentSection extends React.Component {
         return (
             <div>
                 {this.state.comments.map(comment => <Comments comment={comment} key={comment.id} />)}
+                {this.state.timestamp}
                 <AddComment addNewComment={this.addNewComment} handleInputChange={this.handleInputChange}/>
             </div>
         );
