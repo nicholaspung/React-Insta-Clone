@@ -17,7 +17,7 @@ class CommentSection extends React.Component {
             return {
                 comments: [...prevState.comments, {
                     id: index + 1,
-                    username: 'randomUser',
+                    username: localStorage.getItem('userLoggedIn'),
                     text: this.state.value
                 }],
                 value: ''
