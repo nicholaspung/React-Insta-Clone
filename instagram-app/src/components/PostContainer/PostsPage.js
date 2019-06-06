@@ -72,7 +72,6 @@ class PostsPage extends React.Component {
     }
 
     render() {
-        console.log(this.state.filteredData)
         return (
             <div className="App">
             <div className="nav-section">
