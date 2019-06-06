@@ -13,6 +13,10 @@ class CommentSection extends React.Component {
     addNewComment = (event, index = this.state.comments.length) => {
         event.preventDefault();
 
+        if (!this.state.value) {
+            return;
+        }
+
         this.setState(prevState => {
             return {
                 comments: [...prevState.comments, {
@@ -35,7 +39,7 @@ class CommentSection extends React.Component {
         return (
             <div>
                 {this.state.comments.map(comment => <Comments comment={comment} key={comment.id} />)}
-                <span className="post-padding">{this.state.timestamp}</span>
+                <span className="post-padding date">{this.state.timestamp.toUpperCase()}</span>
                 <AddComment addNewComment={this.addNewComment} handleInputChange={this.handleInputChange} value={this.state.value} />
             </div>
         );

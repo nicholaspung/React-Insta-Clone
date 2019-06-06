@@ -42,27 +42,37 @@ class PostsPage extends React.Component {
     handleSearchSubmit = event => {
         event.preventDefault();
 
-        let options = {
-            shouldSort: true,
-            threshold: 0.6,
-            location: 0,
-            distance: 100,
-            maxPatternLength: 32,
-            minMatchCharLength: 1,
-            keys: [
-                "username"
-            ]
-        };
-
-        let fuse = new Fuse(this.state.postData, options);
-        let result = fuse.search(this.state.search)
-
-        this.setState({
-            filteredData: result
+        if (!this.state.search) {
+            this.setState(prevState => {
+                return {
+                    filteredData: prevState.postData
+                }
             })
+        } else {
+            let options = {
+                shouldSort: true,
+                threshold: 0.6,
+                location: 0,
+                distance: 100,
+                maxPatternLength: 32,
+                minMatchCharLength: 1,
+                keys: [
+                    "username"
+                ]
+            };
+    
+            let fuse = new Fuse(this.state.postData, options);
+            let result = fuse.search(this.state.search)
+    
+            this.setState({
+                filteredData: result
+            })
+        }
+
     }
 
     render() {
+        console.log(this.state.filteredData)
         return (
             <div className="App">
             <div className="nav-section">

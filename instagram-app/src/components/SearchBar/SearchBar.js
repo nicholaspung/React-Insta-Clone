@@ -45,6 +45,10 @@ const SearchBarSearchBarInput = styled.input`
     text-align: center;
     border: 1px solid #e6e6e6;
     background: #fafafa;
+
+    &:focus {
+        outline: none;
+    }
 `;
 
 const LineDiv = styled.div`
