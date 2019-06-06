@@ -1,34 +1,80 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import logo from './logo.png';
-import heart from './heart.png';
-import explore from './explore.png';
-import profile from './profile.png';
-import instagram from './instagram.png';
+import logo from '../../assets/logo.png';
+import instagram from '../../assets/instagram.png';
 
 import './SearchBar.css';
 
+const NavigationDiv = styled.div`
+    max-width: 1010px;
+    height: 77px;
+    margin: auto;
+`;
+
+const SearchBarDiv = styled.div`
+    width: 100%;
+    padding: 26px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+`;
+
+const SearchBarLogoDiv = styled.div`
+    width: calc(((100% - 215px) / 2) - 26px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`;
+
+const SearchBarSearchForm = styled.form`
+    width: 215px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+`;
+
+const SearchBarIconsDiv = styled.div`
+    width: calc(((100% - 215px) / 2) - 26px);
+    display: flex;
+    justify-content: flex-end;
+`;
+
+const SearchBarSearchBarInput = styled.input`
+    width: 100%;
+    text-align: center;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+`;
+
+const LineDiv = styled.div`
+    margin: 0 16px;
+    background: black;
+    width: 1px;
+    height: 28px;
+`;
+
 const SearchBar = props => {
     return (
-        <div className="nav">
-            <div className="search-bar">
-                <div className="search-bar-logo">
+        <NavigationDiv>
+            <SearchBarDiv>
+                <SearchBarLogoDiv>
                     <img src={logo} className="icon" alt="Instagram Logo" />
-                    <div className="line hidden"></div>
+                    <LineDiv></LineDiv>
                     <div className="overflow hidden">
                         <img src={instagram} className="instagram" alt="Instagram Words" />
                     </div>
-                </div>
-                <form className="search-bar-search" onSubmit={props.handleSearchSubmit}>
-                    <input placeholder="Search" className="search-bar-search-bar" onChange={props.handleSearchInput} value={props.value}/>
-                </form>
-                <div className="search-bar-icons">
-                    <img src={explore} className="icon" alt="Explore" />
-                    <img src={heart} className="icon" alt="Heart" />
-                    <img src={profile} className="icon" alt="Profile" />
-                </div>
-            </div>
-        </div>
+                </SearchBarLogoDiv>
+                <SearchBarSearchForm onSubmit={props.handleSearchSubmit}>
+                    <SearchBarSearchBarInput placeholder="Search" onChange={props.handleSearchInput} value={props.value}/>
+                </SearchBarSearchForm>
+                <SearchBarIconsDiv>
+                    <span className="icon explore"></span>
+                    <span className="icon heart"></span>
+                    <span className="icon profile"></span>
+                </SearchBarIconsDiv>
+            </SearchBarDiv>
+        </NavigationDiv>
     );
 }
 
