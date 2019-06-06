@@ -23,3 +23,11 @@ button {
     background: none;
     border: none;
 }
+
+.post-padding {
+    padding: 0 16px;
+}
+
+button:focus {
+	outline: none;
+}

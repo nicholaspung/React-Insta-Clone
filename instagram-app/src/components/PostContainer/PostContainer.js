@@ -54,9 +54,9 @@ class PostContainer extends React.Component {
                 <img src={this.state.post.imageUrl} alt={`${this.state.post.username} post`} className="post-image" />
                 <PostPaddingDiv>
                     <Like liked={this.state.liked} handleClick={this.handleClick} />
-                    <span className="text-bold post-padding">{this.state.numberOfLikes} likes</span>
-                    <CommentSection comments={this.state.post.comments} timestamp={this.state.post.timestamp} />
+                    <span className="text-bold">{this.state.numberOfLikes} likes</span>
                 </PostPaddingDiv>
+                <CommentSection comments={this.state.post.comments} timestamp={this.state.post.timestamp} />
             </InstagramPostDiv>
         );
     }

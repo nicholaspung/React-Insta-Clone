@@ -35,7 +35,7 @@ class CommentSection extends React.Component {
         return (
             <div>
                 {this.state.comments.map(comment => <Comments comment={comment} key={comment.id} />)}
-                {this.state.timestamp}
+                <span className="post-padding">{this.state.timestamp}</span>
                 <AddComment addNewComment={this.addNewComment} handleInputChange={this.handleInputChange} value={this.state.value} />
             </div>
         );

@@ -66,7 +66,7 @@ const SearchBar = props => {
                     </div>
                 </SearchBarLogoDiv>
                 <SearchBarSearchForm onSubmit={props.handleSearchSubmit}>
-                    <SearchBarSearchBarInput placeholder="Search" onChange={props.handleSearchInput} value={props.value}/>
+                    <SearchBarSearchBarInput placeholder="🔍Search" onChange={props.handleSearchInput} value={props.value}/>
                 </SearchBarSearchForm>
                 <SearchBarIconsDiv>
                     <span className="icon explore"></span>
