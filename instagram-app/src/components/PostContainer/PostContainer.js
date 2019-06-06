@@ -2,8 +2,24 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import Like from './Like';
+import styled from 'styled-components';
 
 import './PostContainer.css';
+
+const InstagramPostDiv = styled.div`
+    width: 600px;
+    margin: 0 auto 60px auto;
+    border: 1px solid #e6e6e6;
+    background: white;
+`;
+
+const PostHeaderDiv = styled.div`
+    padding: 16px;
+`;
+
+const PostPaddingDiv = styled.div`
+    padding: 0 16px;
+`;
 
 class PostContainer extends React.Component {
     constructor(props) {
@@ -30,18 +46,18 @@ class PostContainer extends React.Component {
 
     render() {
         return (
-            <div className="instagram-post">
-                <div className="post-header">
+            <InstagramPostDiv>
+                <PostHeaderDiv>
                     <img src={this.state.post.thumbnailUrl} alt={`${this.state.post.username} logo`} className="post-user" />
                     <span className="text-bold post-username">{this.state.post.username}</span>
-                </div>
+                </PostHeaderDiv>
                 <img src={this.state.post.imageUrl} alt={`${this.state.post.username} post`} className="post-image" />
-                <div className="post-padding">
+                <PostPaddingDiv>
                     <Like liked={this.state.liked} handleClick={this.handleClick} />
-                </div>
-                <span className="text-bold post-padding">{this.state.numberOfLikes} likes</span>
-                <CommentSection comments={this.state.post.comments} timestamp={this.state.post.timestamp} />
-            </div>
+                    <span className="text-bold post-padding">{this.state.numberOfLikes} likes</span>
+                    <CommentSection comments={this.state.post.comments} timestamp={this.state.post.timestamp} />
+                </PostPaddingDiv>
+            </InstagramPostDiv>
         );
     }
 }
