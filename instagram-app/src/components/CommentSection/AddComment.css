@@ -1,0 +1,19 @@
+.comment-form {
+    width: 100%;
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    margin-top: 8px;
+}
+
+.comment-input {
+    min-height: 56px;
+    border: none;
+    width: 80%;
+}
+
+.comment-input:focus {
+    outline: none;
+}

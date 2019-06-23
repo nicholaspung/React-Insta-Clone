@@ -35,6 +35,9 @@
 
 - Read [this article](https://dev.to/nimmo/state-driven-development-for-user-interfaces-part-1-an-introduction-27f1) about 'State Driven Views' and come up with a short paragraph as to why you feel that `state-driven` views are important to us as software developers today? What are state-driven applications? Why are they powerful? How does React enables those patterns?
 
+    Short Paragraph about State Driven Development:
+        As software developers today, state-driven development is more important than ever in order for us as programmers to understand what we are developing and how we would build it. State-driven applications are applications built with the state first-in-mind in order to build out the rest of the application. It's powerful because of the benefits that we get as programmers: reduced cognitive load, ease of testing, ease of visual documentation, and close ties with behavior driven developer (BDD) techniques. React enables these patterns by making it part of the framework to think about. Each React Component that we make has the possibility of it either being a functional component or a class component that holds state. By having it front of mind, we are cognizant of the fact that everything we build with React has to work well with the state that comes with it.
+
 #### Stretch Problems (Day IV)
 
 - Add the functionality to select a single Post. If a user clicks on a post, only show that post.

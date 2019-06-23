@@ -1,0 +1,45 @@
+@media (max-width: 705px) {
+    .hidden {
+        display: none;
+    }
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.instagram {
+    margin-top: 7px;
+    height: 29px;
+    width: 103px;
+}
+
+.search-bar-icons {
+    width: calc(((100% - 215px) / 2) - 26px);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+	display: block;
+    height: 24px;
+    width: 24px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.heart {
+	background-image: url(../../assets/unheart.png);
+}
+
+.explore {
+    background-image: url(../../assets/explore.png);
+}
+
+.profile {
+    background-image: url(../../assets/profile.png);
+}
+
+.logo {
+    background-image: url(../../assets/logo.png);
+}

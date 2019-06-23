@@ -1,0 +1,38 @@
+.post-image {
+    width: 600px;
+    height: auto;
+}
+
+.post-user {
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.post-username {
+    margin-left: 16px;
+}
+
+button {
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: none;
+}
+
+.post-padding {
+    padding: 0 16px;
+}
+
+button:focus {
+	outline: none;
+}
+
+.date {
+    color: #999;
+    font-size: .7rem;
+}
